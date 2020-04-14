@@ -21,8 +21,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 public class MainFrame extends JFrame implements ActionListener, Runnable {
-        private int maxTime = 300;
-	public int time = maxTime;
+        private int MAX_TIME = 300;
+	public int time = MAX_TIME;
 	private int row = 8;
 	private int col = 8;
 	private int width = 700;
@@ -105,7 +105,7 @@ public class MainFrame extends JFrame implements ActionListener, Runnable {
 	}
 
 	public void newGame() {
-		time = maxTime;
+		time = MAX_TIME;
 		graphicsPanel.removeAll();
 		mainPanel.add(createGraphicsPanel(), BorderLayout.CENTER);
 		mainPanel.validate();
@@ -129,7 +129,7 @@ public class MainFrame extends JFrame implements ActionListener, Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			progressTime.setValue((int) ((double) time / maxTime * 100));
+			progressTime.setValue((int) ((double) time / MAX_TIME * 100));
 		}
 	}
 
